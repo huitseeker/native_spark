@@ -9,6 +9,9 @@ build = "build.rs"
 [lib]
 name = "native_spark"
 
+[features]
+aws_connectors = ["rusoto_core", "rusoto_s3"]
+
 [dependencies]
 actix-web = "1.0.9"
 env_logger = "0.7.1"
@@ -41,6 +44,11 @@ serde_derive = "1.0.104"
 downcast-rs = "1.1.1"
 objekt = "0.1.2"
 serde_traitobject = "0.2"
+
+# optional features
+## aws
+rusoto_core = { version = "0.42", optional = true }
+rusoto_s3 = { version = "0.42", optional = true }
 
 [dependencies.clap]
 version = "2.33"
